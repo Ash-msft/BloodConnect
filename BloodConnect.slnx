@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BloodConnect.Api/BloodConnect.Api.csproj" />
+    <Project Path="src/BloodConnect.Domain/BloodConnect.Domain.csproj" />
+    <Project Path="src/BloodConnect.Infrastructure/BloodConnect.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BloodConnect.Tests/BloodConnect.Tests.csproj" />
+  </Folder>
+</Solution>

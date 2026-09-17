@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.17",
+  "version": "1.0.0",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "packageName": "com.example.bloodconnect",
+  "developer": {
+    "name": "BloodConnect (local demo)",
+    "websiteUrl": "https://example.com",
+    "privacyUrl": "https://example.com/privacy",
+    "termsOfUseUrl": "https://example.com/terms"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "BloodConnect",
+    "full": "BloodConnect — Employee Blood Donor Network"
+  },
+  "description": {
+    "short": "Opt-in employee blood donor matching and requests.",
+    "full": "BloodConnect lets employees privately opt in as blood donors and lets colleagues raise blood requests for patients in need. The app matches compatible, available, eligible donors near the request location and only reveals donor identity to the requester once a donor affirms availability. Donation eligibility guidance shown in the app is informational only — the receiving blood donation center's clinical screening and rules always prevail."
+  },
+  "accentColor": "#B31B1B",
+  "staticTabs": [
+    {
+      "entityId": "bloodconnect-dashboard",
+      "name": "BloodConnect",
+      "contentUrl": "https://REPLACE_WITH_YOUR_APP_HOST/index.html",
+      "websiteUrl": "https://REPLACE_WITH_YOUR_APP_HOST/index.html",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["REPLACE_WITH_YOUR_APP_HOST"],
+  "webApplicationInfo": {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "resource": "api://REPLACE_WITH_YOUR_APP_HOST/00000000-0000-0000-0000-000000000000"
+  }
+}

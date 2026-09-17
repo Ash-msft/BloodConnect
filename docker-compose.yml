@@ -1,0 +1,36 @@
+name: bloodconnect
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8080:8080"
+    environment:
+      # Development here seeds realistic demo data for local container use (see DemoDataSeeder).
+      # Switch to Production and point ConnectionStrings__Default at Azure SQL for real deployments.
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Data Source=/data/bloodconnect.db"
+      BloodConnect__MinimumDonationIntervalDays: "56"
+      BloodConnect__RequestExpiryHours: "72"
+      BloodConnect__MaxDonorsNotifiedPerRequest: "50"
+      BloodConnect__Teams__Enabled: "false"
+      BloodConnect__Teams__IncomingWebhookUrl: ""
+      Cors__AllowedOrigins__0: "http://localhost:5173"
+    volumes:
+      - bloodconnect-data:/data
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+      args:
+        VITE_API_BASE_URL: http://localhost:8080
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  bloodconnect-data:

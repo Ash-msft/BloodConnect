@@ -1,0 +1,29 @@
+# ---- .NET ----
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.db
+*.db-shm
+*.db-wal
+
+# ---- Node / Vite ----
+node_modules/
+client/dist/
+client/.vite/
+*.log
+npm-debug.log*
+
+# ---- Environment / secrets ----
+.env
+.env.local
+*.pfx
+*.pem
+
+# ---- Teams packaging output ----
+teams-app/*.zip
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
